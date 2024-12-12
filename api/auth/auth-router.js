@@ -86,7 +86,7 @@ res.json({message: `Welcome ${req.user.username}`})
  */
 router.get('/logout', (res, req, next) =>{
  if(req.session.user){
-  res.session.destroy(err => {
+  req.session.destroy(err => {
     if(err) {
       next(err)
     } else{
